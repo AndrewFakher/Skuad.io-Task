@@ -39,6 +39,22 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huh-uE-Ell">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9Y-IC-MnK">
+                                        <rect key="frame" x="148.5" y="12" width="117" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="y9Y-IC-MnK" firstAttribute="top" secondItem="huh-uE-Ell" secondAttribute="top" constant="12" id="1v7-7f-jKo"/>
+                                    <constraint firstItem="y9Y-IC-MnK" firstAttribute="centerX" secondItem="huh-uE-Ell" secondAttribute="centerX" id="K7a-aN-d1l"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -46,7 +62,11 @@
                             <constraint firstItem="sfy-1K-xhe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2y-O5-fah"/>
                             <constraint firstItem="sfy-1K-xhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GmY-DU-9fg"/>
                             <constraint firstItem="zdl-FG-U59" firstAttribute="top" secondItem="sfy-1K-xhe" secondAttribute="bottom" constant="8" id="MyU-Bx-w5d"/>
+                            <constraint firstItem="huh-uE-Ell" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z2I-Bm-bo5"/>
                             <constraint firstItem="sfy-1K-xhe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kOB-FI-9t0"/>
+                            <constraint firstItem="huh-uE-Ell" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nxK-M2-cJI"/>
+                            <constraint firstItem="huh-uE-Ell" firstAttribute="top" secondItem="sfy-1K-xhe" secondAttribute="bottom" constant="8" id="qD4-hs-IWB"/>
+                            <constraint firstAttribute="bottom" secondItem="huh-uE-Ell" secondAttribute="bottom" id="rR8-ac-VzC"/>
                             <constraint firstItem="zdl-FG-U59" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w4N-3s-fam"/>
                             <constraint firstAttribute="bottom" secondItem="zdl-FG-U59" secondAttribute="bottom" id="x7H-wf-mNs"/>
                         </constraints>
@@ -55,12 +75,13 @@
                     <navigationItem key="navigationItem" title="Photogram" id="Xqq-77-fJV"/>
                     <connections>
                         <outlet property="collectionView" destination="zdl-FG-U59" id="6f0-4i-VPd"/>
+                        <outlet property="noResultsView" destination="huh-uE-Ell" id="rZr-SJ-fnu"/>
                         <outlet property="searchBar" destination="sfy-1K-xhe" id="lNJ-vf-W3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="104"/>
+            <point key="canvasLocation" x="905.79710144927549" y="103.79464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBy-cn-qge">

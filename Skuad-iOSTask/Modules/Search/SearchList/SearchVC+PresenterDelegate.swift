@@ -24,13 +24,13 @@ extension SearchVC: SearchViewToPresenter{
     func reloadingCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
-//            self.noResultView.isHidden = true
+            self.noResultsView.isHidden = true
         }
     }
     
     func noImagesFoundedView() {
         DispatchQueue.main.async {
-//            self.noResultView.isHidden = false
+            self.noResultsView.isHidden = false
         }
         
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
