@@ -1,0 +1,70 @@
+//
+//  SearchVCPresenter.swift
+//  Skuad-iOSTask
+//
+//  Created by Andrew on 10/24/20.
+//  Copyright © 2020 Andrew. All rights reserved.
+//
+
+import UIKit
+
+class SearchVCPresenter{
+    
+    private weak var view: SearchViewToPresenter?
+    private let interactor = SearchInteractor()
+    private var images = [Image]()
+    private var searchHistoryList = [String]()
+
+    private var page = 1
+    private var total = 1
+    private var query = String()
+    
+    init(view: SearchViewToPresenter){
+        self.view = view
+    }
+    
+    func getSearchedImages(query:String){
+        view?.showIndicator()
+        interactor.searchMovie(query: query) { images, total, error in
+            self.view?.hideIndicator()
+            self.query = query
+            guard let images = images else {return}
+            guard let total = total else {return}
+            if images.count == 0 {self.view?.noImagesFoundedView()}
+            else {
+                self.images = images
+                self.page = 1
+                self.total = total
+                self.view?.reloadingCollectionView()
+            }
+            if let error = error{
+                self.view?.showError(error: error)
+            }
+        }
+    }
+    
+    
+    
+    func getImagesCount() -> Int {
+        return images.count
+    }
+    
+    func emptyingImageArray(){
+        images.removeAll()
+        self.view?.reloadingCollectionView()
+    }
+    
+    func paginateToNextPage(for index: Int){
+        if index == images.count - 1{
+            if images.count < total {
+                
+            }
+        }
+    }
+    
+    func configure(cell: ImageCollectionViewCell, for index: Int) {
+        let image = images[index]
+        let imageURL = image.largeImageURL
+        cell.displayCellData(imageLink: imageURL ?? "")
+    }
+}

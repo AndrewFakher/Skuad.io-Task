@@ -1,0 +1,42 @@
+//
+//  SearchInteractor.swift
+//  Skuad-iOSTask
+//
+//  Created by Andrew on 10/24/20.
+//  Copyright © 2020 Andrew. All rights reserved.
+//
+import Foundation
+
+class SearchInteractor: NetworkResponsable {
+    static let MovieAPIKey = Keys.apiKey
+    let router = Router<SearchApi>()
+    
+    func searchMovie(query: String, completion: @escaping (_ images: [Image]? ,_ total: Int?,_ error: String?)->()){
+        router.request(.search(query: query)) { data, response, error in
+            if error != nil {
+                completion(nil, nil,"Please check your network connection.")
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(ImageResponse.self, from: responseData)
+                        print(apiResponse)
+                        completion(apiResponse.hits,apiResponse.total ,nil)
+                    }catch {
+                        print(error)
+                        completion(nil,nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil,nil, networkFailureError)
+                    
+                }
+            }
+        }
+    }
+}
