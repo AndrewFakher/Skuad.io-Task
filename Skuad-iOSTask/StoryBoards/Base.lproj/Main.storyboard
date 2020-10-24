@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Discover-->
+        <!--Photogram-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="Skuad_iOSTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Discover" id="Xqq-77-fJV"/>
+                    <navigationItem key="navigationItem" title="Photogram" id="Xqq-77-fJV"/>
                     <connections>
                         <outlet property="collectionView" destination="zdl-FG-U59" id="6f0-4i-VPd"/>
                         <outlet property="searchBar" destination="sfy-1K-xhe" id="lNJ-vf-W3a"/>

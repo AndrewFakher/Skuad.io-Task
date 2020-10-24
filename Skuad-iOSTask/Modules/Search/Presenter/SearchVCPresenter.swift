@@ -43,7 +43,16 @@ class SearchVCPresenter{
         }
     }
     
-    
+    func loadMoreImages(query:String,page:Int){
+        view?.showIndicator()
+        interactor.loadMoreImages(query: query, page: page + 1) { images, error in
+            self.view?.hideIndicator()
+            guard let images = images else {return}
+            self.images.append(contentsOf: images)
+            self.page += 1
+            self.view?.reloadingCollectionView()
+        }
+    }
     
     func getImagesCount() -> Int {
         return images.count
@@ -57,7 +66,7 @@ class SearchVCPresenter{
     func paginateToNextPage(for index: Int){
         if index == images.count - 1{
             if images.count < total {
-                
+                loadMoreImages(query: query, page: page)
             }
         }
     }

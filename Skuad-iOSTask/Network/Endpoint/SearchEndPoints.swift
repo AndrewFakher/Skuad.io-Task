@@ -10,6 +10,7 @@ import Foundation
 
 public enum SearchApi {
     case search(query:String)
+    case loadMoreImages(query:String,page:Int)
 }
 
 extension SearchApi: EndPointType {
@@ -25,14 +26,14 @@ extension SearchApi: EndPointType {
     
     var path: String {
         switch self {
-        case .search:
+        case .search, .loadMoreImages:
             return "api/"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .search:
+        case .search, .loadMoreImages:
             return .get
         }
     }
@@ -43,7 +44,13 @@ extension SearchApi: EndPointType {
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: ["q": query,
-                                                      "key":SearchInteractor.MovieAPIKey])
+                                                      "key":SearchInteractor.pixabayAPIKey])
+        case .loadMoreImages(let query, let page):
+            return .requestParameters(bodyParameters: nil,
+                                      bodyEncoding: .urlEncoding,
+                                      urlParameters: ["q": query,
+                                                      "page": page,
+                                                      "key":SearchInteractor.pixabayAPIKey])
         }
     }
     

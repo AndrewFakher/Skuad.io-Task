@@ -8,7 +8,7 @@
 import Foundation
 
 class SearchInteractor: NetworkResponsable {
-    static let MovieAPIKey = Keys.apiKey
+    static let pixabayAPIKey = Keys.apiKey
     let router = Router<SearchApi>()
     
     func searchMovie(query: String, completion: @escaping (_ images: [Image]? ,_ total: Int?,_ error: String?)->()){
@@ -39,4 +39,34 @@ class SearchInteractor: NetworkResponsable {
             }
         }
     }
+    
+    func loadMoreImages(query: String,page:Int, completion: @escaping (_ movie: [Image]?,_ error: String?)->()){
+        router.request(.loadMoreImages(query: query, page: page)) { data, response, error in
+            if error != nil {
+                completion(nil,"Please check your network connection.")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(ImageResponse.self, from: responseData)
+                        completion(apiResponse.hits,nil)
+                    }catch {
+                        print(error)
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                    
+                }
+            }
+        }
+    }
+
 }
