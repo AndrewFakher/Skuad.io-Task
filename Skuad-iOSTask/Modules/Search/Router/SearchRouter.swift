@@ -24,7 +24,7 @@ class SearchRouter{
     func goToImageDetails(from view: SearchViewToPresenter?, index: Int, images: [Image], searchQuery: String) {
         let ImageDetailsView = ImageDetailsRouter.assembleImageDetailshModule(index: index, images: images, searchQuery: searchQuery)
         if let viewController = view as? UIViewController {
-            viewController.navigationController?.pushViewController(ImageDetailsView, animated: true)
+            viewController.present(ImageDetailsView, animated: true, completion: nil)
         }
     }
 }

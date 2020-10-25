@@ -10,15 +10,18 @@ import UIKit
 
 class ImageDetailsVC: UIViewController {
     
+    @IBOutlet weak var imageDetailsLabel: UILabel!
     var presenter: ImageDetailsVCPresenter?
     
+    var viewTranslation = CGPoint(x: 0, y: 0)
+
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = .black
         setupImageDetailCollectionView()
         presenter?.viewDidload()
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismiss)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,5 +29,29 @@ class ImageDetailsVC: UIViewController {
         collectionView.isHidden = false
         collectionView.scrollToItem(at: IndexPath(row: presenter?.selectedImageIndex ?? 0, section: 0) , at: .centeredHorizontally, animated: false)
     }
+    
+}
 
+// MARK: Drag dismiss function
+extension ImageDetailsVC {
+    @objc func handleDismiss(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            viewTranslation = sender.translation(in: view)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.view.transform = CGAffineTransform(translationX: 0, y: self.viewTranslation.y)
+            })
+            
+        case .ended:
+            if viewTranslation.y < 200 {
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                    self.view.transform = .identity
+                })
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
+        default:
+            break
+        }
+    }
 }

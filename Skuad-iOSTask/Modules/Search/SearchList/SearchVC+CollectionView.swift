@@ -16,10 +16,10 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.register(ImageCollectionViewCell.self)
         // setup pinterest layout
         let layout = CollectionViewWaterfallLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.headerInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        layout.minimumColumnSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.headerInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        layout.minimumColumnSpacing = 4
+        layout.minimumInteritemSpacing = 4
         collectionView.collectionViewLayout = layout
     }
     
