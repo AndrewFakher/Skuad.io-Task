@@ -31,15 +31,7 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         presenter.paginateToNextPage(for: indexPath.row)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-//        if let galleryVC = storyboard.instantiateViewController(withIdentifier: "ImageDetailsVC") as? ImageDetailsVC {
-//            galleryVC.imageDetailsList = presenter.images
-//            galleryVC.selectedImageIndex = indexPath.row
-//            self.navigationController?.pushViewController(galleryVC, animated: true)
-            
-//        }
         presenter.navigateToImageDetails(for: indexPath.row)
-
     }
     
 }

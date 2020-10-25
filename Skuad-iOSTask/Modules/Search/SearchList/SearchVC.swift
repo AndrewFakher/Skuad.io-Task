@@ -29,9 +29,7 @@ class SearchVC: UIViewController {
         setupSearchHistoryTableView()
         presenter = SearchVCPresenter(view: self)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        presenter.removeSuggestionView()
-    }
+
     @IBAction func closeTapped(_ sender: Any) {
         removeSuggestionView()
     }

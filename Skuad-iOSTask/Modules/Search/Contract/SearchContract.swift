@@ -15,6 +15,7 @@ protocol SearchViewToPresenter: Alertable, Indicatable {
     func showError(error: String)
     func noImagesFoundedView()
     func removeSuggestionView()
+    func handlingSearchBarText(searchBarText: String)
 }
 
 protocol ImageCellView {

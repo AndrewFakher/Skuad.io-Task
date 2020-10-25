@@ -82,6 +82,10 @@ class SearchVCPresenter{
         searchHistoryList = UserDefaultHelper.getSuggestionList()
     }
     
+    func addSearchBarText(text: String){
+        self.view?.handlingSearchBarText(searchBarText: text)
+    }
+    
     func paginateToNextPage(for index: Int){
         if index == images.count - 1{
             if images.count < total {
@@ -103,6 +107,7 @@ class SearchVCPresenter{
     
     func searchHistoryClicked(for index: Int){
         let searchedQuery = searchHistoryList[index]
+        addSearchBarText(text: searchedQuery)
         removeSuggestionView()
         getSearchedImages(query: searchedQuery)
     }

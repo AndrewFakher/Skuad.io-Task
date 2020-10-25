@@ -36,5 +36,11 @@ extension SearchVC: SearchViewToPresenter{
     
     func removeSuggestionView() {
         self.searchHistoryView.isHidden = true
+        self.searchBar.endEditing(true)
     }
+    
+    func handlingSearchBarText(searchBarText: String) {
+        searchBar.text = searchBarText
+    }
+    
 }
