@@ -32,10 +32,9 @@ extension SearchVC: SearchViewToPresenter{
         DispatchQueue.main.async {
             self.noResultsView.isHidden = false
         }
-        
     }
     
     func removeSuggestionView() {
-//        self.searchHistoryView.isHidden = true
+        self.searchHistoryView.isHidden = true
     }
 }

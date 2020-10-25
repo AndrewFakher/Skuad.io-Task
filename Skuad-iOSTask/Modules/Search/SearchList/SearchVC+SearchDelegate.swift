@@ -17,13 +17,20 @@ extension SearchVC: UISearchBarDelegate{
         if searchText.isEmpty {
             isSearching = false
             searchBar.text = ""
+            presenter.emptyingImageArray()
+            presenter.removeSuggestionView()
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        showSuggestionView()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchedText = searchBar.text else {return}
         if !searchedText.trimmingCharacters(in: .whitespaces).isEmpty {
             presenter.emptyingImageArray()
+            presenter.removeSuggestionView()
             presenter.getSearchedImages(query: queryString)
         }else {
             searchBar.text = ""

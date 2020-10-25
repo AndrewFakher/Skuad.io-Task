@@ -20,3 +20,7 @@ protocol SearchViewToPresenter: Alertable, Indicatable {
 protocol ImageCellView {
     func displayCellData(imageLink: String)
 }
+
+protocol SearchHistoryCellView {
+    func displayCellData(searchHistoryLabel: String)
+}

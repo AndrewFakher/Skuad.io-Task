@@ -12,7 +12,9 @@ class SearchVCPresenter{
     
     private weak var view: SearchViewToPresenter?
     private let interactor = SearchInteractor()
-    private var images = [Image]()
+    private let router = SearchRouter()
+
+    var images = [Image]()
     private var searchHistoryList = [String]()
 
     private var page = 1
@@ -32,6 +34,7 @@ class SearchVCPresenter{
             guard let total = total else {return}
             if images.count == 0 {self.view?.noImagesFoundedView()}
             else {
+                UserDefaultHelper.addSuggestion(suggestion: query)
                 self.images = images
                 self.page = 1
                 self.total = total
@@ -58,9 +61,25 @@ class SearchVCPresenter{
         return images.count
     }
     
+    func getSearchHistoryCount() -> Int {
+        return searchHistoryList.count
+    }
+    
     func emptyingImageArray(){
         images.removeAll()
         self.view?.reloadingCollectionView()
+    }
+    
+    func removeSuggestionView(){
+        self.view?.removeSuggestionView()
+    }
+    
+    func emptyingSearchHistoryArray(){
+        searchHistoryList.removeAll()
+    }
+    
+    func updateSearchHistoryList(){
+        searchHistoryList = UserDefaultHelper.getSuggestionList()
     }
     
     func paginateToNextPage(for index: Int){
@@ -75,5 +94,20 @@ class SearchVCPresenter{
         let image = images[index]
         let imageURL = image.largeImageURL
         cell.displayCellData(imageLink: imageURL ?? "")
+    }
+    
+    func configureSearchHistoryCell(cell: SearchHistoryTVC, for index: Int) {
+        let searchHistory = searchHistoryList[index]
+        cell.displayCellData(searchHistoryLabel: searchHistory)
+    }
+    
+    func searchHistoryClicked(for index: Int){
+        let searchedQuery = searchHistoryList[index]
+        removeSuggestionView()
+        getSearchedImages(query: searchedQuery)
+    }
+    
+    func navigateToImageDetails(for index: Int){
+        router.goToImageDetails(from: view, index: index, images: images)
     }
 }

@@ -14,8 +14,8 @@ class RootRouter: RootWireframe {
     func presentRootScreen(in window: UIWindow) {
         window.makeKeyAndVisible()
         var rootViewController: UIViewController!
-        rootViewController = SearchVC()
+        rootViewController = SearchRouter.assembleSearchModule()
         window.rootViewController = rootViewController
+        
     }
-
 }

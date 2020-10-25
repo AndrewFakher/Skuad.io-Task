@@ -26,7 +26,6 @@ class SearchInteractor: NetworkResponsable {
                     }
                     do {
                         let apiResponse = try JSONDecoder().decode(ImageResponse.self, from: responseData)
-                        print(apiResponse)
                         completion(apiResponse.hits,apiResponse.total ,nil)
                     }catch {
                         print(error)

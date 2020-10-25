@@ -10,6 +10,9 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    @IBOutlet weak var searchHistoryTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var searchHistoryTableView: UITableView!
+    @IBOutlet weak var searchHistoryView: UIView!
     @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,11 +23,19 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = .red
         setupCollectionView()
         setupSearchBar()
+        setupSearchHistoryTableView()
         presenter = SearchVCPresenter(view: self)
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.removeSuggestionView()
+    }
+    @IBAction func closeTapped(_ sender: Any) {
+        removeSuggestionView()
+    }
+    
 }
 
 
