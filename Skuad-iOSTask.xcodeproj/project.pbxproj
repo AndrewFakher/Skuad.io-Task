@@ -72,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		26C936713616A3AC8567691C /* Pods-Skuad-iOSTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skuad-iOSTask.debug.xcconfig"; path = "Target Support Files/Pods-Skuad-iOSTask/Pods-Skuad-iOSTask.debug.xcconfig"; sourceTree = "<group>"; };
-		49B4CD4A2544273F00FB4528 /* Skuad-iOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Skuad-iOSTask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B4CD4A2544273F00FB4528 /* Photogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B4CD4D2544273F00FB4528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B4CD512544273F00FB4528 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		49B4CD542544273F00FB4528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		49B4CD4B2544273F00FB4528 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49B4CD4A2544273F00FB4528 /* Skuad-iOSTask.app */,
+				49B4CD4A2544273F00FB4528 /* Photogram.app */,
 				49B4CD602544274400FB4528 /* Skuad-iOSTaskTests.xctest */,
 			);
 			name = Products;
@@ -495,7 +495,7 @@
 			);
 			name = "Skuad-iOSTask";
 			productName = "Skuad-iOSTask";
-			productReference = 49B4CD4A2544273F00FB4528 /* Skuad-iOSTask.app */;
+			productReference = 49B4CD4A2544273F00FB4528 /* Photogram.app */;
 			productType = "com.apple.product-type.application";
 		};
 		49B4CD5F2544274400FB4528 /* Skuad-iOSTaskTests */ = {
@@ -836,7 +836,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skuad.Skuad-iOSTask";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Photogram;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -856,7 +856,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skuad.Skuad-iOSTask";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Photogram;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
