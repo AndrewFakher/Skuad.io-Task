@@ -57,6 +57,7 @@
 		49B4CDEB2544FA9600FB4528 /* ImageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CDEA2544FA9600FB4528 /* ImageDetailsRouter.swift */; };
 		49F3307B2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */; };
 		49F3307D2545C0B100930E7E /* ImageDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F3307C2545C0B100930E7E /* ImageDetails.storyboard */; };
+		49F330862546052700930E7E /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */; };
 		4EBA61FEB8BD7320A984CE8A /* Pods_Skuad_iOSTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA477893B566C465168507A /* Pods_Skuad_iOSTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		49B4CDEA2544FA9600FB4528 /* ImageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsRouter.swift; sourceTree = "<group>"; };
 		49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageDetails+PresenterDelegate.swift"; sourceTree = "<group>"; };
 		49F3307C2545C0B100930E7E /* ImageDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetails.storyboard; sourceTree = "<group>"; };
+		49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		4EA477893B566C465168507A /* Pods_Skuad_iOSTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skuad_iOSTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2B5277AFFD0E6A300B3261 /* Pods-Skuad-iOSTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skuad-iOSTask.release.xcconfig"; path = "Target Support Files/Pods-Skuad-iOSTask/Pods-Skuad-iOSTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 		49B4CD4C2544273F00FB4528 /* Skuad-iOSTask */ = {
 			isa = PBXGroup;
 			children = (
+				49F3308725460FB400930E7E /* CustomLayout */,
 				49B4CD852544377A00FB4528 /* RootRouter */,
 				49B4CD7E25442A8700FB4528 /* Protocols */,
 				49B4CD7D25442A0400FB4528 /* Helper */,
@@ -467,6 +470,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		49F3308725460FB400930E7E /* CustomLayout */ = {
+			isa = PBXGroup;
+			children = (
+				49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */,
+			);
+			path = CustomLayout;
+			sourceTree = "<group>";
+		};
 		8FADCD7CBFB1B763FB1697FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B4CDBB25444F9700FB4528 /* SearchVC+PresenterDelegate.swift in Sources */,
+				49F330862546052700930E7E /* CollectionViewWaterfallLayout.swift in Sources */,
 				49B4CDAC254440B100FB4528 /* Router.swift in Sources */,
 				49B4CD9325443BE700FB4528 /* Reusable.swift in Sources */,
 				49B4CDA5254440B100FB4528 /* NetworkResponsable.swift in Sources */,

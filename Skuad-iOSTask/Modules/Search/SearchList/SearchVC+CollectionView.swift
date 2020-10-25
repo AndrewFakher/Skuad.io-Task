@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupCollectionView(){
@@ -15,6 +14,13 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.delegate = self
         collectionView.keyboardDismissMode = .onDrag
         collectionView.register(ImageCollectionViewCell.self)
+        // setup pinterest layout
+        let layout = CollectionViewWaterfallLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.headerInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        layout.minimumColumnSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        collectionView.collectionViewLayout = layout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,14 +41,3 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
 }
-
-extension SearchVC: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2.2, height: 220.0)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-    }
-}
-

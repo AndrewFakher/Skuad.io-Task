@@ -15,10 +15,8 @@ class ImageCollectionViewCell: UICollectionViewCell,ImageCellView, NibLoadable {
         didSet{
             imageView.layer.cornerRadius = 15
             imageView.clipsToBounds = true
-            imageView.layer.shadowPath = UIBezierPath(rect: imageView.bounds).cgPath
-            imageView.layer.shadowRadius = 10
-            imageView.layer.shadowOffset = .zero
-            imageView.layer.shadowOpacity = 3
+            imageView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            imageView.layer.borderWidth = 1.0
         }
     }
     

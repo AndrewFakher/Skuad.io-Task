@@ -14,13 +14,13 @@ class SearchVCPresenter{
     private let interactor = SearchInteractor()
     private let router = SearchRouter()
 
-    var images = [Image]()
+    private var images = [Image]()
     private var searchHistoryList = [String]()
 
     private var page = 1
     private var total = 1
     private var query = String()
-    var searchedQuery = String()
+    private var searchedQuery = String()
     
     init(view: SearchViewToPresenter){
         self.view = view

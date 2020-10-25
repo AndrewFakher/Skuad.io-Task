@@ -19,8 +19,9 @@ class SearchVC: UIViewController {
     var presenter: SearchVCPresenter!
     var isSearching = false
     var queryString = String()
-    lazy var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
     
+    lazy var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
@@ -29,7 +30,11 @@ class SearchVC: UIViewController {
         setupSearchHistoryTableView()
         presenter = SearchVCPresenter(view: self)
     }
-    
 }
 
-
+extension SearchVC: CollectionViewWaterfallLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let random = Int(arc4random_uniform((UInt32(100))))
+        return CGSize(width: 180, height: 120 + random)
+    }
+}
