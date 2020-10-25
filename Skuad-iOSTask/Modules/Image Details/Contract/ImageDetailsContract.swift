@@ -10,4 +10,5 @@ import Foundation
 
 protocol ImageDetailsViewToPresenter: class {
     var presenter: ImageDetailsVCPresenter? { get set }
+    func setNavTitle(title: String)
 }

@@ -9,5 +9,9 @@
 import UIKit
 
 extension ImageDetailsVC: ImageDetailsViewToPresenter{
+    func setNavTitle(title: String) {
+        self.title = title
+    }
+    
     
 }

@@ -21,8 +21,8 @@ class SearchRouter{
         return UIStoryboard(name:"Search",bundle: Bundle.main)
     }
     
-    func goToImageDetails(from view: SearchViewToPresenter?, index: Int, images: [Image]) {
-        let ImageDetailsView = ImageDetailsRouter.assembleImageDetailshModule(index: index, images: images)
+    func goToImageDetails(from view: SearchViewToPresenter?, index: Int, images: [Image], searchQuery: String) {
+        let ImageDetailsView = ImageDetailsRouter.assembleImageDetailshModule(index: index, images: images, searchQuery: searchQuery)
         if let viewController = view as? UIViewController {
             viewController.navigationController?.pushViewController(ImageDetailsView, animated: true)
         }

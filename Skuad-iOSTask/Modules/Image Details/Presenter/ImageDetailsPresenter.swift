@@ -11,12 +11,14 @@ class ImageDetailsVCPresenter {
     private weak var view: ImageDetailsViewToPresenter?
     
     private var imageDetailsList = [Image]()
+    private var navString = String()
     var selectedImageIndex = 0
-
-    init(imageDetailsView: ImageDetailsViewToPresenter?,index: Int, user: [Image]) {
+    
+    init(imageDetailsView: ImageDetailsViewToPresenter?,index: Int, user: [Image], searchQuery: String) {
         self.view = imageDetailsView
         self.imageDetailsList = user
         self.selectedImageIndex = index
+        self.navString = searchQuery
     }
     
     func getImageDetailsCount() -> Int {
@@ -27,5 +29,9 @@ class ImageDetailsVCPresenter {
         let image = imageDetailsList[index]
         let imageURL = image.largeImageURL
         cell.displayCellData(imageLink: imageURL ?? "")
+    }
+    
+    func viewDidload(){
+        self.view?.setNavTitle(title: navString)
     }
 }

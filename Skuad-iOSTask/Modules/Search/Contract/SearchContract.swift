@@ -16,6 +16,7 @@ protocol SearchViewToPresenter: Alertable, Indicatable {
     func noImagesFoundedView()
     func removeSuggestionView()
     func handlingSearchBarText(searchBarText: String)
+    func emptytextAlert(msg: String)
 }
 
 protocol ImageCellView {

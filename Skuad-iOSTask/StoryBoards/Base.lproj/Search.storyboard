@@ -8,28 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photogram-->
+        <!--SearchVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="SearchVC" id="BYZ-38-t0r" customClass="SearchVC" customModule="Skuad_iOSTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-1K-xhe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="WKi-Sv-P2i"/>
-                                </constraints>
-                                <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdl-FG-U59">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xYE-9S-FJ8">
                                     <size key="itemSize" width="128" height="128"/>
@@ -40,7 +28,7 @@
                                 <cells/>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huh-uE-Ell">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9Y-IC-MnK">
                                         <rect key="frame" x="148.5" y="12" width="117" height="24.5"/>
@@ -56,30 +44,10 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLl-GM-hgX">
-                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Recent Searches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiE-3p-WNb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="iNU-mk-Dqu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzr-RJ-ool">
-                                        <rect key="frame" x="363" y="0.0" width="39" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="gb0-Pb-DRP"/>
-                                        </constraints>
-                                        <state key="normal" title="Close"/>
-                                        <connections>
-                                            <action selector="closeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhM-j9-nD5"/>
-                                        </connections>
-                                    </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3QL-Qc-r4E">
-                                        <rect key="frame" x="0.0" y="34" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="f4z-8B-gta"/>
@@ -89,45 +57,35 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.2032587756849315" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Rzr-RJ-ool" secondAttribute="trailing" constant="12" id="1Cu-9g-RsK"/>
-                                    <constraint firstItem="WiE-3p-WNb" firstAttribute="leading" secondItem="QLl-GM-hgX" secondAttribute="leading" id="NDE-jv-v2f"/>
                                     <constraint firstItem="3QL-Qc-r4E" firstAttribute="leading" secondItem="QLl-GM-hgX" secondAttribute="leading" id="O3Q-p1-gBX"/>
-                                    <constraint firstItem="3QL-Qc-r4E" firstAttribute="top" secondItem="WiE-3p-WNb" secondAttribute="bottom" id="PFn-ff-jxE"/>
-                                    <constraint firstItem="Rzr-RJ-ool" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QLl-GM-hgX" secondAttribute="leading" constant="20" symbolic="YES" id="XkS-fP-vh2"/>
                                     <constraint firstAttribute="trailing" secondItem="3QL-Qc-r4E" secondAttribute="trailing" id="e6k-eh-1yh"/>
-                                    <constraint firstItem="WiE-3p-WNb" firstAttribute="top" secondItem="QLl-GM-hgX" secondAttribute="top" id="iXz-LC-54Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="WiE-3p-WNb" secondAttribute="trailing" id="jWq-ej-GdV"/>
-                                    <constraint firstItem="Rzr-RJ-ool" firstAttribute="top" secondItem="QLl-GM-hgX" secondAttribute="top" id="nxa-DK-G3C"/>
+                                    <constraint firstItem="3QL-Qc-r4E" firstAttribute="top" secondItem="QLl-GM-hgX" secondAttribute="top" id="lhI-2v-I1f"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zdl-FG-U59" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="58A-CJ-AYt"/>
-                            <constraint firstItem="sfy-1K-xhe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2y-O5-fah"/>
-                            <constraint firstItem="sfy-1K-xhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GmY-DU-9fg"/>
+                            <constraint firstItem="QLl-GM-hgX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7OD-94-7JR"/>
                             <constraint firstItem="QLl-GM-hgX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hak-2Y-p37"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QLl-GM-hgX" secondAttribute="bottom" id="Ia0-0d-ldY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QLl-GM-hgX" secondAttribute="trailing" id="MUM-ez-P4t"/>
-                            <constraint firstItem="QLl-GM-hgX" firstAttribute="top" secondItem="sfy-1K-xhe" secondAttribute="bottom" id="Mfj-W0-oza"/>
-                            <constraint firstItem="zdl-FG-U59" firstAttribute="top" secondItem="sfy-1K-xhe" secondAttribute="bottom" constant="8" id="MyU-Bx-w5d"/>
                             <constraint firstItem="huh-uE-Ell" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z2I-Bm-bo5"/>
-                            <constraint firstItem="sfy-1K-xhe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kOB-FI-9t0"/>
+                            <constraint firstItem="huh-uE-Ell" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="evh-xc-O1K"/>
+                            <constraint firstItem="zdl-FG-U59" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="idM-1a-BgY"/>
                             <constraint firstItem="huh-uE-Ell" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nxK-M2-cJI"/>
-                            <constraint firstItem="huh-uE-Ell" firstAttribute="top" secondItem="sfy-1K-xhe" secondAttribute="bottom" constant="8" id="qD4-hs-IWB"/>
                             <constraint firstAttribute="bottom" secondItem="huh-uE-Ell" secondAttribute="bottom" id="rR8-ac-VzC"/>
                             <constraint firstItem="zdl-FG-U59" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w4N-3s-fam"/>
                             <constraint firstAttribute="bottom" secondItem="zdl-FG-U59" secondAttribute="bottom" id="x7H-wf-mNs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Photogram" id="Xqq-77-fJV">
+                    <navigationItem key="navigationItem" id="Xqq-77-fJV">
                         <barButtonItem key="backBarButtonItem" title=" " id="wcK-ju-RmN"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="zdl-FG-U59" id="6f0-4i-VPd"/>
                         <outlet property="noResultsView" destination="huh-uE-Ell" id="rZr-SJ-fnu"/>
-                        <outlet property="searchBar" destination="sfy-1K-xhe" id="lNJ-vf-W3a"/>
                         <outlet property="searchHistoryTableHeight" destination="f4z-8B-gta" id="Btd-yn-OdI"/>
                         <outlet property="searchHistoryTableView" destination="3QL-Qc-r4E" id="6hQ-Hv-X2e"/>
                         <outlet property="searchHistoryView" destination="QLl-GM-hgX" id="JcS-qd-KKU"/>
@@ -142,11 +100,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VEK-bR-dlM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g1j-SA-wet">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="g1j-SA-wet">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.95294117649999999" green="0.59999999999999998" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

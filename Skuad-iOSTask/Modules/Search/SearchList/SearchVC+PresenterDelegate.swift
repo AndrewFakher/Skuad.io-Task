@@ -43,4 +43,8 @@ extension SearchVC: SearchViewToPresenter{
         searchBar.text = searchBarText
     }
     
+    func emptytextAlert(msg: String) {
+        self.showError(error: msg)
+    }
+    
 }

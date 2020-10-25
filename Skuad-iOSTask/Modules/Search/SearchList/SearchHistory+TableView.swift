@@ -16,6 +16,7 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func showSuggestionView(){
+        searchBar.text = ""
         presenter.emptyingSearchHistoryArray()
         presenter.updateSearchHistoryList()
         if presenter.getSearchHistoryCount() > 0 {

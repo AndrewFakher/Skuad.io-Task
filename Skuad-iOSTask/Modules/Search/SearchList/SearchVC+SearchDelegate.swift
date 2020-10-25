@@ -9,6 +9,9 @@
 import UIKit
 extension SearchVC: UISearchBarDelegate{
     func setupSearchBar(){
+        searchBar.placeholder = "Search...."
+        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
+        self.navigationItem.leftBarButtonItem = leftNavBarButton
         searchBar.delegate = self
     }
     
@@ -18,12 +21,11 @@ extension SearchVC: UISearchBarDelegate{
             isSearching = false
             searchBar.text = ""
             presenter.emptyingImageArray()
-            presenter.removeSuggestionView()
         }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        showSuggestionView()
+         showSuggestionView()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -34,7 +36,7 @@ extension SearchVC: UISearchBarDelegate{
             presenter.getSearchedImages(query: queryString)
         }else {
             searchBar.text = ""
-            print("Can't be empty")
+            presenter.enteringEmptyText(msg: "Search can't be empty")
         }
     }
 }

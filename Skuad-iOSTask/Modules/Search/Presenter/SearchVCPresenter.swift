@@ -20,6 +20,7 @@ class SearchVCPresenter{
     private var page = 1
     private var total = 1
     private var query = String()
+    var searchedQuery = String()
     
     init(view: SearchViewToPresenter){
         self.view = view
@@ -85,7 +86,9 @@ class SearchVCPresenter{
     func addSearchBarText(text: String){
         self.view?.handlingSearchBarText(searchBarText: text)
     }
-    
+    func enteringEmptyText(msg: String){
+        self.view?.showAlert(message: msg)
+    }
     func paginateToNextPage(for index: Int){
         if index == images.count - 1{
             if images.count < total {
@@ -106,13 +109,13 @@ class SearchVCPresenter{
     }
     
     func searchHistoryClicked(for index: Int){
-        let searchedQuery = searchHistoryList[index]
+        searchedQuery = searchHistoryList[index]
         addSearchBarText(text: searchedQuery)
         removeSuggestionView()
         getSearchedImages(query: searchedQuery)
     }
     
     func navigateToImageDetails(for index: Int){
-        router.goToImageDetails(from: view, index: index, images: images)
+        router.goToImageDetails(from: view, index: index, images: images, searchQuery: query)
     }
 }

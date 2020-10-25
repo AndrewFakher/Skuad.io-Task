@@ -10,10 +10,10 @@ import UIKit
 
 class ImageDetailsRouter{
     
-    static func assembleImageDetailshModule(index: Int, images: [Image]) -> UIViewController {
+    static func assembleImageDetailshModule(index: Int, images: [Image],searchQuery: String) -> UIViewController {
         let imageDetailsVC = mainstoryboard.instantiateViewController(withIdentifier: "ImageDetailsVC")
         if let imageDetailsView = imageDetailsVC as? ImageDetailsViewToPresenter {
-            let presenter = ImageDetailsVCPresenter(imageDetailsView: imageDetailsView, index: index, user: images)
+            let presenter = ImageDetailsVCPresenter(imageDetailsView: imageDetailsView, index: index, user: images, searchQuery: searchQuery)
             imageDetailsView.presenter = presenter
         }
         return imageDetailsVC

@@ -18,6 +18,7 @@ class ImageDetailsVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .black
         setupImageDetailCollectionView()
+        presenter?.viewDidload()
     }
     
     override func viewDidAppear(_ animated: Bool) {

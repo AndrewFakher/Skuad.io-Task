@@ -15,23 +15,19 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchHistoryView: UIView!
     @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var presenter: SearchVCPresenter!
     var isSearching = false
     var queryString = String()
+    lazy var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         setupCollectionView()
         setupSearchBar()
         setupSearchHistoryTableView()
         presenter = SearchVCPresenter(view: self)
-    }
-
-    @IBAction func closeTapped(_ sender: Any) {
-        removeSuggestionView()
     }
     
 }
