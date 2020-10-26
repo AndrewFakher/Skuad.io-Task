@@ -35,6 +35,8 @@ class SearchVC: UIViewController {
         setupSearchBar()
         setupSearchHistoryTableView()
         presenter = SearchVCPresenter(view: self)
+        self.collectionView.accessibilityIdentifier = "SearchColletionAccessibility"
+
     }
 }
 

@@ -59,6 +59,8 @@
 		49E3C89B254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89A254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift */; };
 		49E3C89D25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89C25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift */; };
 		49E3C89F25474DDD00CE8D89 /* SearchPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89E25474DDD00CE8D89 /* SearchPresenterTest.swift */; };
+		49E3C8A225475AA100CE8D89 /* SearchUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C8A125475AA100CE8D89 /* SearchUITest.swift */; };
+		49E3C8A425476B2200CE8D89 /* pixabay.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49E3C8A325476B2200CE8D89 /* pixabay.gif */; };
 		49F3307B2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */; };
 		49F3307D2545C0B100930E7E /* ImageDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F3307C2545C0B100930E7E /* ImageDetails.storyboard */; };
 		49F330862546052700930E7E /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */; };
@@ -133,6 +135,9 @@
 		49E3C89A254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorWithImagesSpy.swift; sourceTree = "<group>"; };
 		49E3C89C25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorWithoutImagesSpy.swift; sourceTree = "<group>"; };
 		49E3C89E25474DDD00CE8D89 /* SearchPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTest.swift; sourceTree = "<group>"; };
+		49E3C8A125475AA100CE8D89 /* SearchUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUITest.swift; sourceTree = "<group>"; };
+		49E3C8A325476B2200CE8D89 /* pixabay.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pixabay.gif; sourceTree = "<group>"; };
+		49E3C8A525476B3700CE8D89 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageDetails+PresenterDelegate.swift"; sourceTree = "<group>"; };
 		49F3307C2545C0B100930E7E /* ImageDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetails.storyboard; sourceTree = "<group>"; };
 		49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
@@ -170,8 +175,10 @@
 		49B4CD412544273F00FB4528 = {
 			isa = PBXGroup;
 			children = (
+				49E3C8A525476B3700CE8D89 /* README.md */,
 				49B4CD4C2544273F00FB4528 /* Skuad-iOSTask */,
 				49B4CD632544274400FB4528 /* Skuad-iOSTaskTests */,
+				49E3C8A025475A7100CE8D89 /* Skuad-iOSTaskUITests */,
 				49B4CD4B2544273F00FB4528 /* Products */,
 				8FADCD7CBFB1B763FB1697FD /* Pods */,
 				030D6C5C969C5C17BBDC146C /* Frameworks */,
@@ -229,6 +236,7 @@
 		49B4CD702544285600FB4528 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49E3C8A325476B2200CE8D89 /* pixabay.gif */,
 				49B4CD562544274400FB4528 /* Assets.xcassets */,
 				49B4CD582544274400FB4528 /* LaunchScreen.storyboard */,
 				49B4CD5B2544274400FB4528 /* Info.plist */,
@@ -482,6 +490,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		49E3C8A025475A7100CE8D89 /* Skuad-iOSTaskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49E3C8A125475AA100CE8D89 /* SearchUITest.swift */,
+			);
+			path = "Skuad-iOSTaskUITests";
+			sourceTree = "<group>";
+		};
 		49F3308725460FB400930E7E /* CustomLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +603,7 @@
 				49B4CDE22544D1EF00FB4528 /* SearchHistoryTVC.xib in Resources */,
 				49B4CDC02544524700FB4528 /* ImageCollectionViewCell.xib in Resources */,
 				49B4CD552544273F00FB4528 /* Search.storyboard in Resources */,
+				49E3C8A425476B2200CE8D89 /* pixabay.gif in Resources */,
 				49B4CDDB2544B20300FB4528 /* ImageDetailsCollectionCell.xib in Resources */,
 				49F3307D2545C0B100930E7E /* ImageDetails.storyboard in Resources */,
 			);
@@ -703,6 +720,7 @@
 				49E3C89F25474DDD00CE8D89 /* SearchPresenterTest.swift in Sources */,
 				49E3C897254731C000CE8D89 /* SearchViewToPresenterSpy.swift in Sources */,
 				49E3C89B254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift in Sources */,
+				49E3C8A225475AA100CE8D89 /* SearchUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

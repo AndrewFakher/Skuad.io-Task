@@ -9,13 +9,15 @@
 import XCTest
 @testable import Skuad_iOSTask
 
+//MARK: Search Presenter Unit Tests
+
 class SearchPresenterTest: XCTestCase {
     private var searchInteractorWithImages: SearchInteractorWithImagesSpy!
     private var searchInteractorWithoutImages: SearchInteractorWithoutImagesSpy!
     private var searchView: SearchViewToPresenterSpy!
     private var searchPresenter: SearchVCPresenter!
 
-    func testOnStartWithProducts() {
+    func testOnStartWithImages() {
         givenSearchInteractorWithImages()
         givenASearchView()
         givenASearchPresenterWith()

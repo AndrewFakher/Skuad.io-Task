@@ -9,6 +9,8 @@
 import Foundation
 import XCTest
 
+//MARK: Search Interactor Unit Tests
+
 @testable import Skuad_iOSTask
 
 class SearchIneractorTests: XCTestCase {

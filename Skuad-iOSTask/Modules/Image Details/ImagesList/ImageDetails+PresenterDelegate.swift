@@ -15,3 +15,4 @@ extension ImageDetailsVC: ImageDetailsViewToPresenter{
         imageDetailsLabel.text = title
     }
 }
+
