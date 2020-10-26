@@ -20,6 +20,7 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate{
     // Show SearchHistory TableView
 
     func showSuggestionView(){
+        searchBar.showsCancelButton = true
         searchBar.text = ""
         presenter.emptyingSearchHistoryArray()
         presenter.updateSearchHistoryList()
