@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: Image Details Protocols
+
 protocol ImageDetailsViewToPresenter: class {
     var presenter: ImageDetailsVCPresenter? { get set }
     func setNavTitle(title: String)

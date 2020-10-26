@@ -10,12 +10,14 @@ import UIKit
 import SDWebImage
 
 class ImageDetailsCollectionCell: UICollectionViewCell, NibLoadable {
+    //MARK: Outlets
 
     @IBOutlet weak var imageDetails: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    // displaying cell data
     func displayCellData(imageLink: String) {
         self.setImgURL(imgLink: imageLink)
     }

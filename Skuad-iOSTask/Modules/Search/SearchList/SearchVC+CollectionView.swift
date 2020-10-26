@@ -9,6 +9,8 @@
 import UIKit
 extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // Setup Images Collection View
+
     func setupCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -23,6 +25,8 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.collectionViewLayout = layout
     }
     
+    //MARK: CollectionView DataSource + Delegate
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.getImagesCount()
     }

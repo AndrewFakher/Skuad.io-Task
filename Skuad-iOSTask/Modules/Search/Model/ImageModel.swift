@@ -7,6 +7,8 @@
 //
 
 import Foundation
+//MARK: Images Model
+
 struct ImageResponse: Codable {
     let total: Int?
     let hits: [Image]?

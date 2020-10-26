@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: UserDefaults helper class
+
 private let suggestionList = "SuggestionsList"
 
 class UserDefaultHelper {

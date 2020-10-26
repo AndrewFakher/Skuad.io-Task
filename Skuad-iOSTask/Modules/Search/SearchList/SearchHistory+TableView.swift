@@ -9,12 +9,16 @@
 import UIKit
 
 extension SearchVC: UITableViewDataSource, UITableViewDelegate{
+    // Setup Search History TableView
+
     func setupSearchHistoryTableView(){
         searchHistoryTableView.delegate = self
         searchHistoryTableView.dataSource = self
         searchHistoryTableView.register(SearchHistoryTVC.self)
     }
     
+    // Show SearchHistory TableView
+
     func showSuggestionView(){
         searchBar.text = ""
         presenter.emptyingSearchHistoryArray()
@@ -30,6 +34,8 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate{
         }
     }
     
+    //MARK: Search TableView DataSource + Delegate
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getSearchHistoryCount()
     }

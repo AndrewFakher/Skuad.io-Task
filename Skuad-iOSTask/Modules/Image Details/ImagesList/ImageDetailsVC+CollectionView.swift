@@ -9,13 +9,16 @@
 import UIKit
 
 extension ImageDetailsVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
+   // Setup Image Gallery CollectionView
+
     func setupImageDetailCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ImageDetailsCollectionCell.self)
     }
     
+    //MARK: CollectionView + DataSource + Delegate
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.getImageDetailsCount() ?? 0
     }

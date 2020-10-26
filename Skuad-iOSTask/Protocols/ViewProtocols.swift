@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: View Protocols
+
 protocol Indicatable: class {
     func showActivityIndicator()
     func hideActivityIndicator()

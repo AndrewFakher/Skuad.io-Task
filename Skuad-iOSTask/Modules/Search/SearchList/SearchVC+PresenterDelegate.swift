@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: Search ViewController Presenter
+
 extension SearchVC: SearchViewToPresenter{
     func showIndicator() {
         showActivityIndicator()

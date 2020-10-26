@@ -8,7 +8,11 @@
 
 import UIKit
 
+//MARK: Search ViewController
+
 class SearchVC: UIViewController {
+
+    //MARK: Outlets
 
     @IBOutlet weak var searchHistoryTableHeight: NSLayoutConstraint!
     @IBOutlet weak var searchHistoryTableView: UITableView!
@@ -16,6 +20,8 @@ class SearchVC: UIViewController {
     @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //MARK: Properties
+
     var presenter: SearchVCPresenter!
     var isSearching = false
     var queryString = String()
@@ -31,6 +37,8 @@ class SearchVC: UIViewController {
         presenter = SearchVCPresenter(view: self)
     }
 }
+
+//MARK: Pinterest Layout Appearance
 
 extension SearchVC: CollectionViewWaterfallLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

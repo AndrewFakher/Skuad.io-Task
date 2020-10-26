@@ -7,6 +7,8 @@
 //
 import UIKit
 
+//MARK: Reusing cells protocols
+
 protocol Reusable: class {}
 
 extension Reusable where Self: UIView {

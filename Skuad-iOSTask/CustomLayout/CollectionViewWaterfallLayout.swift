@@ -9,6 +9,8 @@
 
 import UIKit
 
+//MARK: Pinterest Layout File
+
 public let CollectionViewWaterfallElementKindSectionHeader = "CollectionViewWaterfallElementKindSectionHeader"
 public let CollectionViewWaterfallElementKindSectionFooter = "CollectionViewWaterfallElementKindSectionFooter"
 

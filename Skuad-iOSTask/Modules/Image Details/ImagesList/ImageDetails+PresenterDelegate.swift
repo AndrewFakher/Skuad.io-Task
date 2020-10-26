@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: Image Details Presenter View
+
 extension ImageDetailsVC: ImageDetailsViewToPresenter{
     func setNavTitle(title: String) {
         imageDetailsLabel.text = title

@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: Activity Indicator Extension
+
 fileprivate var activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
 
 extension Indicatable where Self: UIViewController {

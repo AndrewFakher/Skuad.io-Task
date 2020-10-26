@@ -10,13 +10,16 @@ import UIKit
 
 class ImageDetailsVC: UIViewController {
     
-    @IBOutlet weak var imageDetailsLabel: UILabel!
-    var presenter: ImageDetailsVCPresenter?
-    
-    var viewTranslation = CGPoint(x: 0, y: 0)
+    //MARK: Outlets
 
+    @IBOutlet weak var imageDetailsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
+    //MARK: Properties
+
+    var presenter: ImageDetailsVCPresenter?
+    var viewTranslation = CGPoint(x: 0, y: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageDetailCollectionView()
@@ -32,7 +35,7 @@ class ImageDetailsVC: UIViewController {
     
 }
 
-// MARK: Drag dismiss function
+// MARK: Drag dismiss Image Details View
 extension ImageDetailsVC {
     @objc func handleDismiss(sender: UIPanGestureRecognizer) {
         switch sender.state {

@@ -8,6 +8,8 @@
 
 import UIKit
 extension SearchVC: UISearchBarDelegate{
+    // Setup SearchBar
+    
     func setupSearchBar(){
         searchBar.placeholder = "Search...."
         let leftNavBarButton = UIBarButtonItem(customView:searchBar)
@@ -15,6 +17,8 @@ extension SearchVC: UISearchBarDelegate{
         searchBar.delegate = self
     }
     
+    //MARK: SearchBar Delegate
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.queryString = searchText
         if searchText.isEmpty {

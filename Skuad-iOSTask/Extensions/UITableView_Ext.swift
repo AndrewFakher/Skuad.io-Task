@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: Reusing tableview cell extension
+
 extension UITableViewCell: Reusable {}
 
 extension UITableView {

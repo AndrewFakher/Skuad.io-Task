@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: Root Router Protocol
+
 protocol RootWireframe: class {
     var rootViewController: UIViewController! {get set}
     func presentRootScreen(in window: UIWindow)

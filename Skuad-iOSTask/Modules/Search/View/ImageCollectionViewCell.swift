@@ -9,8 +9,10 @@
 import UIKit
 import SDWebImage
 
+//MARK: Image collection Cell
 class ImageCollectionViewCell: UICollectionViewCell,ImageCellView, NibLoadable {
 
+    //MARK: Properties
     @IBOutlet weak var imageView: UIView!{
         didSet{
             imageView.layer.cornerRadius = 15
@@ -26,6 +28,7 @@ class ImageCollectionViewCell: UICollectionViewCell,ImageCellView, NibLoadable {
         super.awakeFromNib()
     }
     
+    // displaying cell data
     func displayCellData(imageLink: String) {
         self.setImgURL(imgLink: imageLink)
     }

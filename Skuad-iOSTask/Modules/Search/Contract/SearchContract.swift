@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: Search View Protocols
+
 protocol SearchViewToPresenter: Alertable, Indicatable {
     func showIndicator()
     func hideIndicator()
@@ -18,10 +20,13 @@ protocol SearchViewToPresenter: Alertable, Indicatable {
     func handlingSearchBarText(searchBarText: String)
     func emptytextAlert(msg: String)
 }
+//MARK: Image Cell Protocols
 
 protocol ImageCellView {
     func displayCellData(imageLink: String)
 }
+
+//MARK: Search History Protocols
 
 protocol SearchHistoryCellView {
     func displayCellData(searchHistoryLabel: String)

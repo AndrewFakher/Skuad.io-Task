@@ -7,6 +7,8 @@
 //
 import Foundation
 
+//MARK: Search Requests Api's
+
 class SearchInteractor: NetworkResponsable {
     static let pixabayAPIKey = Keys.apiKey
     let router = Router<SearchApi>()

@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: Image Details Router
+
 class ImageDetailsRouter{
     
     static func assembleImageDetailshModule(index: Int, images: [Image],searchQuery: String) -> UIViewController {

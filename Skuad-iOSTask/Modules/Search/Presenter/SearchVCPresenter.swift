@@ -8,7 +8,10 @@
 
 import UIKit
 
+//MARK: Search Presenter
 class SearchVCPresenter{
+    
+    //MARK: Properties
     
     private weak var view: SearchViewToPresenter?
     private let interactor = SearchInteractor()
@@ -22,9 +25,13 @@ class SearchVCPresenter{
     private var query = String()
     private var searchedQuery = String()
     
+   // Injecting View To Presenter
+    
     init(view: SearchViewToPresenter){
         self.view = view
     }
+    
+    // Get Searched Image Request
     
     func getSearchedImages(query:String){
         view?.showIndicator()
@@ -46,7 +53,8 @@ class SearchVCPresenter{
             }
         }
     }
-    
+    // Load More Images Request
+
     func loadMoreImages(query:String,page:Int){
         view?.showIndicator()
         interactor.loadMoreImages(query: query, page: page + 1) { images, error in
@@ -58,34 +66,47 @@ class SearchVCPresenter{
         }
     }
     
+    // Images Count
+
     func getImagesCount() -> Int {
         return images.count
     }
-    
+    // Search History Count
+
     func getSearchHistoryCount() -> Int {
         return searchHistoryList.count
     }
     
+    // Emptying Images Array
+
     func emptyingImageArray(){
         images.removeAll()
         self.view?.reloadingCollectionView()
     }
     
+    // Remove Suggestion TableView
+
     func removeSuggestionView(){
         self.view?.removeSuggestionView()
     }
-    
+    // Emptying Search History TableView
+
     func emptyingSearchHistoryArray(){
         searchHistoryList.removeAll()
     }
-    
+    // Get Search History From UserDefaults
+
     func updateSearchHistoryList(){
         searchHistoryList = UserDefaultHelper.getSuggestionList()
     }
     
+    //Handling Selected Text From SearchHistory TableView
+
     func addSearchBarText(text: String){
         self.view?.handlingSearchBarText(searchBarText: text)
     }
+    
+    // Handling State of entering empty text of searchbar
     func enteringEmptyText(msg: String){
         self.view?.showAlert(message: msg)
     }
@@ -97,17 +118,20 @@ class SearchVCPresenter{
         }
     }
     
+    // passing selected image index to its cell
     func configure(cell: ImageCollectionViewCell, for index: Int) {
         let image = images[index]
         let imageURL = image.largeImageURL
         cell.displayCellData(imageLink: imageURL ?? "")
     }
     
+    // passing selected search history to its cell
     func configureSearchHistoryCell(cell: SearchHistoryTVC, for index: Int) {
         let searchHistory = searchHistoryList[index]
         cell.displayCellData(searchHistoryLabel: searchHistory)
     }
     
+    // search history selected text query
     func searchHistoryClicked(for index: Int){
         searchedQuery = searchHistoryList[index]
         addSearchBarText(text: searchedQuery)
@@ -115,6 +139,7 @@ class SearchVCPresenter{
         getSearchedImages(query: searchedQuery)
     }
     
+    // navigating to gallery
     func navigateToImageDetails(for index: Int){
         router.goToImageDetails(from: view, index: index, images: images, searchQuery: query)
     }

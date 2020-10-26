@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+//MARK: Reusing collectionView cell extension
+
 extension UICollectionViewCell: Reusable {}
 
 extension UICollectionView {
