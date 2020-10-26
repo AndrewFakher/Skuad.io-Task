@@ -56,6 +56,9 @@
 		49B4CDEB2544FA9600FB4528 /* ImageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CDEA2544FA9600FB4528 /* ImageDetailsRouter.swift */; };
 		49E3C897254731C000CE8D89 /* SearchViewToPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C896254731C000CE8D89 /* SearchViewToPresenterSpy.swift */; };
 		49E3C89925473DE200CE8D89 /* SearchInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89825473DE200CE8D89 /* SearchInteractorTest.swift */; };
+		49E3C89B254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89A254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift */; };
+		49E3C89D25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89C25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift */; };
+		49E3C89F25474DDD00CE8D89 /* SearchPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3C89E25474DDD00CE8D89 /* SearchPresenterTest.swift */; };
 		49F3307B2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */; };
 		49F3307D2545C0B100930E7E /* ImageDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F3307C2545C0B100930E7E /* ImageDetails.storyboard */; };
 		49F330862546052700930E7E /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */; };
@@ -127,6 +130,9 @@
 		49B4CDEA2544FA9600FB4528 /* ImageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsRouter.swift; sourceTree = "<group>"; };
 		49E3C896254731C000CE8D89 /* SearchViewToPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewToPresenterSpy.swift; sourceTree = "<group>"; };
 		49E3C89825473DE200CE8D89 /* SearchInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorTest.swift; sourceTree = "<group>"; };
+		49E3C89A254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorWithImagesSpy.swift; sourceTree = "<group>"; };
+		49E3C89C25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorWithoutImagesSpy.swift; sourceTree = "<group>"; };
+		49E3C89E25474DDD00CE8D89 /* SearchPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTest.swift; sourceTree = "<group>"; };
 		49F3307A2545AF5A00930E7E /* ImageDetails+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageDetails+PresenterDelegate.swift"; sourceTree = "<group>"; };
 		49F3307C2545C0B100930E7E /* ImageDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetails.storyboard; sourceTree = "<group>"; };
 		49F330852546052700930E7E /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
@@ -202,8 +208,11 @@
 		49B4CD632544274400FB4528 /* Skuad-iOSTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				49E3C89E25474DDD00CE8D89 /* SearchPresenterTest.swift */,
 				49E3C896254731C000CE8D89 /* SearchViewToPresenterSpy.swift */,
 				49E3C89825473DE200CE8D89 /* SearchInteractorTest.swift */,
+				49E3C89A254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift */,
+				49E3C89C25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift */,
 				49B4CD662544274400FB4528 /* Info.plist */,
 			);
 			path = "Skuad-iOSTaskTests";
@@ -689,8 +698,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E3C89D25474B7100CE8D89 /* SearchInteractorWithoutImagesSpy.swift in Sources */,
 				49E3C89925473DE200CE8D89 /* SearchInteractorTest.swift in Sources */,
+				49E3C89F25474DDD00CE8D89 /* SearchPresenterTest.swift in Sources */,
 				49E3C897254731C000CE8D89 /* SearchViewToPresenterSpy.swift in Sources */,
+				49E3C89B254749A300CE8D89 /* SearchInteractorWithImagesSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
